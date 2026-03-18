@@ -56,11 +56,15 @@ Statistical comparison with state-of-the-Art (SOTA) algorithms. IHO guarantees *
 
 ---
 
-### 💻 How to Use
+### 📂 Repository Structure
 
-1.  Clone this repository: `git clone https://github.com/Yule-Cai/Kinematic-Aware-IHO.git`
-2.  Open **MATLAB (R2023b or later)**.
-3.  Navigate to the `src/` directory.
-4.  Run `main.m` to generate the default simulation results for all maps.
-
----
+```text
+Kinematic-Aware-IHO/
+├── src/                      # Source code for algorithms and environment
+│   ├── main.m                # Main execution script
+│   ├── IHO_Planner.m         # Proposed Kinematic-Aware IHO
+│   ├── HO_Planner.m          # Original Hippo Optimization
+│   └── ...                   # Other SOTA planners (PSO, GWO, etc.)
+├── results/                  # Generated paths and convergence curves
+├── assets/                   # High-res figures for the paper
+└── hardware_demos/           # Real-world robot navigation videos
