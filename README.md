@@ -1,6 +1,3 @@
-
-
-
 # 🦛 Kinematic-Aware Improved Hippo Optimization (IHO) for Robot Path Planning
 
 [![MATLAB](https://img.shields.io/badge/MATLAB-R2023b+-blue.svg)](https://www.mathworks.com/products/matlab.html)
@@ -64,6 +61,7 @@ The proposed method is validated on a real-world mobile robotic platform across 
   <br>
   <em>Large-scale constrained maze (Map 5). The trajectory demonstrates high smoothness and safety in narrow corridors.</em>
 </p>
+
 
 ---
 
