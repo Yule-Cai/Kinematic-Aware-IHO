@@ -8,7 +8,7 @@
 
 ---
 
-### 🌐 [English Version] | [中文版](#-动力学感知改进河马优化算法iho机器人路径规划)
+### 🌐 [English Version](README.md) | [中文版](README_zh.md)
 
 ---
 
@@ -24,7 +24,7 @@
 This project establishes a stringent, multi-dimensional evaluation system across five complex maps.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO_NAME/main/assets/Evaluation_Framework.png"width="100%" alt="Evaluation Framework">
+  <img src="assets/Evaluation_Framework.png" width="100%" alt="Evaluation Framework">
   <br>
   <em>Fig. 1. The comprehensive multidimensional benchmark testing framework for IHO.</em>
 </p>
@@ -36,7 +36,7 @@ This project establishes a stringent, multi-dimensional evaluation system across
 Validation on a physical mobile robot platform across distinct challenging environments.
 
 <p align="center">
-  <video src="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO_NAME/main/hardware_demos/demo_map5_compressed.mp4" width="70%" controls autoplay loop muted></video>
+  <video src="hardware_demos/map_5.mov" width="70%" controls autoplay loop muted></video>
   <br>
   <em>Demo: Large-scale, Highly Constrained Labyrinth (Map 5). Note the smooth navigation without sharp turns.</em>
 </p>
@@ -48,8 +48,8 @@ Validation on a physical mobile robot platform across distinct challenging envir
 Statistical comparison with state-of-the-Art (SOTA) algorithms. IHO guarantees **100% collision safety** with extreme efficiency.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO_NAME/main/results/planned_paths/Path_Map4.png" width="48%" alt="Path Map 4">
-  <img src="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO_NAME/main/results/convergence_curves/Convergence_Map4.png" width="48%" alt="Convergence Map 4">
+  <img src="results/planned_paths/Path_Map4.png" width="48%" alt="Path Map 4">
+  <img src="results/convergence_curves/Convergence_Map4.png" width="48%" alt="Convergence Map 4">
   <br>
   <em>Comparison on Map 4: Our IHO (blue line) achieves a smooth, taut path and unique cliff-like convergence (right plot, blue line dropping at step 70).</em>
 </p>
@@ -58,7 +58,7 @@ Statistical comparison with state-of-the-Art (SOTA) algorithms. IHO guarantees *
 
 ### 💻 How to Use
 
-1.  Clone this repository: `git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git`
+1.  Clone this repository: `git clone https://github.com/Yule-Cai/Kinematic-Aware-IHO.git`
 2.  Open **MATLAB (R2023b or later)**.
 3.  Navigate to the `src/` directory.
 4.  Run `main.m` to generate the default simulation results for all maps.
