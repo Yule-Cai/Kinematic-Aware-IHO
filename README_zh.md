@@ -60,15 +60,17 @@ $$
 
 ---
 
-## 🎥 实机验证
 
-算法已在真实移动机器人平台上进行验证，覆盖多种高约束复杂环境。
+## 🎥 实机验证 (Hardware Validation)
+
+本文提出的算法已在真实的移动机器人平台上进行了全流程验证，覆盖了多种高约束的复杂障碍物环境。
 
 <p align="center">
-  <video src="hardware_demos/map_5.mov" width="70%" controls autoplay loop muted></video>
+  <img src="hardware_demos/demo_map_5.jpg" width="75%" alt="实机验证图 Map 5">
   <br>
-  <em>Map 5：大尺度复杂迷宫环境下的导航效果（路径平滑且安全）</em>
+  <em>图 2. 大尺度复杂迷宫环境 (Map 5) 实机导航效果。移动机器人完美执行了 IHO 规划的路径，在狭窄走廊中表现出极高的平滑度，彻底消除了物理不可行的锐角转向，确保了导航的安全性和稳定性。</em>
 </p>
+
 
 ---
 
