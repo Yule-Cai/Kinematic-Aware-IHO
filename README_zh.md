@@ -22,7 +22,7 @@
 
 ### 🏗️ 综合实验评估体系
 
-本项目构建了一个包含 5 张不同尺度、不同拓扑特征的严苛环境基准测试库（$40\times40$ 狭窄走廊与 $80\times80$ 大尺度复杂迷宫），并在极其严苛的零容忍碰撞惩罚函数（$\lambda_{static}=10^6$）下进行公平测试。
+本项目构建了一个包含 5 张不同尺度、不同拓扑特征的严苛环境基准测试库（40x40 狭窄走廊与 80x80 大尺度复杂迷宫），并在极其严苛的零容忍碰撞惩罚函数（λ_static = 10^6）下进行公平测试。
 
 <p align="center">
   <img src="assets/Evaluation_Framework.png" width="100%" alt="实验评估流程图">
@@ -37,7 +37,7 @@
 我们在物理移动机器人平台上，横跨多个极具挑战性的障碍物环境进行了实机验证。
 
 <p align="center">
-  <video src="hardware_demos/demo_map5_compressed.mp4" width="70%" controls autoplay loop muted></video>
+  <video src="hardware_demos/map_5.mov" width="70%" controls autoplay loop muted></video>
   <br>
   <em>演示：大尺度高约束迷宫环境 (Map 5)。请注意机器人穿越复杂走廊时的极度平滑性与安全性。</em>
 </p>
@@ -46,7 +46,7 @@
 
 ### 📊 仿真结果与性能对比
 
-与基础算法（HO）以及其他 5 种目前最新的顶级群智能算法（SBOA, ARO, INFO, PSO, GWO）进行了定量统计与定性动态对比。结果表明，IHO 在极低种群规模（$N=30$）下依然保证了 **100% 的全局零碰撞绝对安全**。
+与基础算法（HO）以及其他 5 种目前最新的顶级群智能算法（SBOA, ARO, INFO, PSO, GWO）进行了定量统计与定性动态对比。结果表明，IHO 在极低种群规模（N = 30）下依然保证了 **100% 的全局零碰撞绝对安全**。
 
 <p align="center">
   <img src="results/planned_paths/Path_Map4.png" width="48%" alt="地图4轨迹图">
@@ -57,8 +57,15 @@
 
 ---
 
-### 💻 快速开始 (How to Use)
+### 📂 仓库目录结构
 
-1. 克隆本仓库到本地：
-   ```bash
-   git clone [https://github.com/YOUR_USERNAME/Kinematic-Aware-IHO.git](https://github.com/YOUR_USERNAME/Kinematic-Aware-IHO.git)
+```text
+Kinematic-Aware-IHO/
+├── src/                      # 算法与环境源代码
+│   ├── main.m                # 主运行脚本
+│   ├── IHO_Planner.m         # 本文提出的 IHO 算法核心代码
+│   ├── HO_Planner.m          # 原始河马优化算法
+│   └── ...                   # 其他对比算法 (PSO, GWO 等)
+├── results/                  # 跑图生成的轨迹与收敛曲线
+├── assets/                   # 论文中使用的高清架构图
+└── hardware_demos/           # 真实机器人导航演示视频
