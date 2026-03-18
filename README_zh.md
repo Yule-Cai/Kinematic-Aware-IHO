@@ -1,3 +1,4 @@
+```markdown
 # 🦛 动力学感知改进河马优化算法 (IHO) 机器人路径规划
 
 [![MATLAB](https://img.shields.io/badge/MATLAB-R2023b+-blue.svg)](https://www.mathworks.com/products/matlab.html)
@@ -15,8 +16,8 @@
 
 ### 💡 核心理论创新
 
-1.  **动力学感知约束 (Kinematic-Aware Constraint)**：将底盘非完整约束无缝融入群智能寻优机制，剔除包含“原地掉头”或“锐角折线”的物理不可行路径，确保生成的轨迹可直接部署于真实的移动机器人或四足机器人控制系统。
-2.  **拉普拉斯熨斗算子 (Laplacian Ironing Operator)**：受几何信号处理启发，创新性地提出拓扑张力释放机制。在算法寻优后期对空间航点进行平滑，实现独特的**断崖式收敛 (Cliff-like convergence)**。
+1. **动力学感知约束 (Kinematic-Aware Constraint)**：将底盘非完整约束无缝融入群智能寻优机制，剔除包含“原地掉头”或“锐角折线”的物理不可行路径，确保生成的轨迹可直接部署于真实的移动机器人或四足机器人控制系统。
+2. **拉普拉斯熨斗算子 (Laplacian Ironing Operator)**：受几何信号处理启发，创新性地提出拓扑张力释放机制。在算法寻优后期对空间航点进行平滑，实现独特的**断崖式收敛 (Cliff-like convergence)**。
 
 ---
 
@@ -69,27 +70,48 @@ Kinematic-Aware-IHO/
 ├── results/                  # 跑图生成的轨迹与收敛曲线
 ├── assets/                   # 论文中使用的高清架构图
 └── hardware_demos/           # 真实机器人导航演示视频
-</p>
+```
+
 ---
 
 ### ⚙️ 环境依赖
 
 * **操作系统**: Windows 10/11, Ubuntu 20.04+, 或 macOS。
-* **软件环境**: MATLAB R2023b 或更高版本（推荐，以获得最佳的画图渲染效果）。
-* **附加工具箱**: 无需安装任何额外的特定工具箱。代码仅依赖 MATLAB 基础函数，以确保 100% 的可复现性。
-</p>
+* **软件环境**: MATLAB R2023b 或更高版本（推荐）。
+* **附加工具箱**: 无需安装任何额外的特定工具箱。代码仅依赖 MATLAB 基础函数。
+
 ---
 
 ### 💻 快速开始 (How to Use)
 
-1. 克隆本仓库到本地：
+1. **克隆本仓库到本地**:
 ```bash
 git clone [https://github.com/Yule-Cai/Kinematic-Aware-IHO.git](https://github.com/Yule-Cai/Kinematic-Aware-IHO.git)
+```
+2. **打开 MATLAB** 并将路径切换至本项目的 `src/` 文件夹。
+3. **运行脚本**:
+```matlab
+main
+```
 
-打开 MATLAB。
+---
 
-将工作路径切换至本项目的 src/ 文件夹。
+### 📄 引用 (Citation)
 
-直接运行 main.m 脚本。
-</p>
-© 2026. 本项目遵循 CC BY-NC-SA 4.0 开源协议。
+如果您觉得本项目对您的科研工作有帮助，请考虑引用我们的论文：
+
+```bibtex
+@article{Cai2026IHO,
+  title={Kinematic-Aware Improved Hippo Optimization with Laplacian Ironing for Swarm-based Path Planning in Cluttered Environments},
+  author={Cai, Yule and others},
+  journal={arXiv preprint arXiv:XXXX.XXXXX (Under Review)},
+  year={2026}
+}
+```
+
+---
+© 2026. 本项目遵循 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 开源协议。
+```
+
+---
+
