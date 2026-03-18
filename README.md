@@ -18,31 +18,22 @@
 ## 💡 Key Contributions
 
 ### 1. Kinematic-Aware Constraint
-
-A kinematic-aware mechanism is embedded into the swarm optimization process to explicitly handle nonholonomic constraints of mobile robots.
-This eliminates physically infeasible paths (e.g., in-place turns or sharp-angle segments), ensuring that generated trajectories are directly executable on real robotic platforms.
+A kinematic-aware mechanism is embedded into the swarm optimization process to explicitly handle nonholonomic constraints of mobile robots. This eliminates physically infeasible paths (e.g., in-place turns or sharp-angle segments), ensuring that generated trajectories are directly executable on real robotic platforms.
 
 ### 2. Laplacian Ironing Operator
-
-Inspired by geometric signal processing, we propose a **Laplacian Ironing Operator** that smooths waypoint distributions during late-stage optimization.
-This operator induces a distinctive **cliff-like convergence behavior**, significantly improving path smoothness without sacrificing optimality.
+Inspired by geometric signal processing, we propose a Laplacian Ironing Operator that smooths waypoint distributions during late-stage optimization. This operator induces a distinctive **cliff-like convergence** behavior, significantly improving path smoothness without sacrificing optimality.
 
 ---
 
 ## 🏗️ Benchmark Framework
 
-We establish a comprehensive evaluation framework consisting of **five challenging environments** with varying scales and topologies:
-
+We establish a comprehensive evaluation framework consisting of five challenging environments with varying scales and topologies:
 * Small-scale narrow corridor maps ($40 \times 40$)
 * Large-scale cluttered maze environments ($80 \times 80$)
 
-All methods are evaluated under a **strict collision penalty**:
-
-$$
-\lambda_{static} = 10^6
-$$
-
-ensuring a **zero-tolerance safety criterion**.
+All methods are evaluated under a strict collision penalty:
+$$\lambda_{static} = 10^6$$
+ensuring a zero-tolerance safety criterion.
 
 <p align="center">
   <img src="assets/Evaluation_Framework.png" width="100%" alt="Evaluation Framework">
@@ -64,24 +55,14 @@ The proposed method is validated on a real-world mobile robotic platform across 
 
 ---
 
-
-
 ## 📊 Results and Comparisons
 
-We compare IHO with:
-
-* HO (baseline)
-* SBOA
-* ARO
-* INFO
-* PSO
-* GWO
+We compare IHO with state-of-the-art algorithms including HO (baseline), SBOA, ARO, INFO, PSO, and GWO.
 
 ### Key Findings:
-
-* **100% collision-free solutions** even with small population size ($N = 30$)
+* **100% collision-free** solutions even with small population size ($N = 30$)
 * Superior path smoothness and compactness
-* Clear **late-stage convergence acceleration** induced by Laplacian ironing
+* Clear late-stage convergence acceleration induced by Laplacian ironing
 
 <p align="center">
   <img src="results/planned_paths/Path_Map4.png" width="48%" alt="Path">
@@ -96,14 +77,14 @@ We compare IHO with:
 
 ```text
 Kinematic-Aware-IHO/
-├── src/                     # Core algorithms and environments
+├── src/                    # Core algorithms and environments
 │   ├── main.m              # Entry point
-│   ├── IHO_Planner.m      # Proposed IHO algorithm
-│   ├── HO_Planner.m       # Original HO algorithm
-│   └── ...                # Other baselines (PSO, GWO, etc.)
-├── results/               # Generated paths and convergence curves
-├── assets/                # Figures used in the paper
-└── hardware_demos/        # Real robot demonstrations
+│   ├── IHO_Planner.m       # Proposed IHO algorithm
+│   ├── HO_Planner.m        # Original HO algorithm
+│   └── ...                 # Other baselines (PSO, GWO, etc.)
+├── results/                # Generated paths and convergence curves
+├── assets/                 # Figures used in the paper
+└── hardware_demos/         # Real robot demonstrations
 ```
 
 ---
