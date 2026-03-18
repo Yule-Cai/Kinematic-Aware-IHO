@@ -69,3 +69,18 @@ Kinematic-Aware-IHO/
 ├── results/                  # 跑图生成的轨迹与收敛曲线
 ├── assets/                   # 论文中使用的高清架构图
 └── hardware_demos/           # 真实机器人导航演示视频
+
+⚙️ 环境依赖
+操作系统: Windows 10/11, Ubuntu 20.04+, 或 macOS。
+软件环境: MATLAB R2023b 或更高版本（推荐，以获得最佳的画图渲染效果）。
+附加工具箱: 无需安装任何额外的特定工具箱。代码仅依赖 MATLAB 基础函数，以确保 100% 的可复现性。
+💻 快速开始 (How to Use)
+克隆本仓库到本地：
+
+Bash
+
+git clone [https://github.com/Yule-Cai/Kinematic-Aware-IHO.git](https://github.com/Yule-Cai/Kinematic-Aware-IHO.git)
+打开 MATLAB。
+将工作路径切换至本项目的 src/ 文件夹。
+直接运行 main.m 脚本。程序将自动执行算法寻优并生成对应地图的路径图与收敛曲线。这些也要加进去吗
+© 2026. 本项目遵循 CC BY-NC-SA 4.0 开源协议。
