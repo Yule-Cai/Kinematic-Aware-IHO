@@ -57,7 +57,7 @@ ensuring a **zero-tolerance safety criterion**.
 The proposed method is validated on a real-world mobile robotic platform across multiple complex environments.
 
 <p align="center">
-  <video src="hardware_demos/map_5.mov" width="70%" controls autoplay loop muted></video>
+  <video src="hardware_demos/demo_map_5.mov" width="70%" controls autoplay loop muted></video>
   <br>
   <em>Large-scale constrained maze (Map 5). The trajectory demonstrates high smoothness and safety in narrow corridors.</em>
 </p>
