@@ -1,133 +1,138 @@
-
-
-
-# 🦛 Kinematic-Aware Improved Hippo Optimization (IHO) for Robot Path Planning
+# 🦛 动力学感知改进河马优化算法（IHO）用于机器人路径规划
 
 [![MATLAB](https://img.shields.io/badge/MATLAB-R2023b+-blue.svg)](https://www.mathworks.com/products/matlab.html)
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![Status](https://img.shields.io/badge/Status-Under%20Review-orange.svg)]()
 
-> Official implementation of the paper:
-> **"Kinematic-Aware Improved Hippo Optimization with Laplacian Ironing for Swarm-based Path Planning in Cluttered Environments"** *(under review)*
+> 本仓库为以下论文的官方代码实现：
+> **《Kinematic-Aware Improved Hippo Optimization with Laplacian Ironing for Swarm-based Path Planning in Cluttered Environments》**（审稿中）
 
 ---
 
-### 🌐 Language
+## 🌐 语言版本
 
 [English](README.md) | [中文](README_zh.md)
 
 ---
 
-## 💡 Key Contributions
+## 💡 核心贡献
 
-### 1. Kinematic-Aware Constraint
+### 1️⃣ 动力学感知约束（Kinematic-Aware Constraint）
 
-A kinematic-aware mechanism is embedded into the swarm optimization process to explicitly handle nonholonomic constraints of mobile robots.
-This eliminates physically infeasible paths (e.g., in-place turns or sharp-angle segments), ensuring that generated trajectories are directly executable on real robotic platforms.
+在群智能优化过程中引入机器人**非完整运动学约束**，从搜索空间层面剔除不可执行解（如原地急转、锐角路径等），从而：
 
-### 2. Laplacian Ironing Operator
-
-Inspired by geometric signal processing, we propose a **Laplacian Ironing Operator** that smooths waypoint distributions during late-stage optimization.
-This operator induces a distinctive **cliff-like convergence behavior**, significantly improving path smoothness without sacrificing optimality.
+* 保证路径物理可行性
+* 降低后处理或轨迹重规划需求
+* 支持真实移动机器人与四足机器人直接部署
 
 ---
 
-## 🏗️ Benchmark Framework
+### 2️⃣ 拉普拉斯熨斗算子（Laplacian Ironing Operator）
 
-We establish a comprehensive evaluation framework consisting of **five challenging environments** with varying scales and topologies:
+受几何信号处理启发，提出一种用于路径优化后期的平滑机制：
 
-* Small-scale narrow corridor maps ($40 \times 40$)
-* Large-scale cluttered maze environments ($80 \times 80$)
+* 对离散航点进行拓扑张力释放
+* 提升路径连续性与曲率平滑性
+* 在收敛后期产生明显的**“断崖式收敛（Cliff-like Convergence）”现象**
 
-All methods are evaluated under a **strict collision penalty**:
+---
+
+## 🏗️ 基准测试体系
+
+构建了包含 **5种不同复杂度环境** 的标准测试框架：
+
+* 小尺度狭窄通道（$40 \times 40$）
+* 大尺度复杂迷宫（$80 \times 80$）
+
+所有算法在统一条件下评估，并采用严格碰撞惩罚项：
 
 $$
 \lambda_{static} = 10^6
 $$
 
-ensuring a **zero-tolerance safety criterion**.
+实现**零容忍碰撞约束**，确保评估公平性与工程意义。
 
 <p align="center">
-  <img src="assets/Evaluation_Framework.png" width="100%" alt="Evaluation Framework">
+  <img src="assets/Evaluation_Framework.png" width="100%" alt="实验框架">
   <br>
-  <em>Fig. 1. Multi-dimensional benchmark framework and comparison matrix.</em>
+  <em>图1：多维度评估体系与算法对比框架</em>
 </p>
 
 ---
 
-## 🎥 Hardware Validation
+## 🎥 实机验证
 
-The proposed method is validated on a real-world mobile robotic platform across multiple complex environments.
+算法已在真实移动机器人平台上进行验证，覆盖多种高约束复杂环境。
 
 <p align="center">
   <video src="hardware_demos/map_5.mov" width="70%" controls autoplay loop muted></video>
   <br>
-  <em>Large-scale constrained maze (Map 5). The trajectory demonstrates high smoothness and safety in narrow corridors.</em>
+  <em>Map 5：大尺度复杂迷宫环境下的导航效果（路径平滑且安全）</em>
 </p>
 
 ---
 
-## 📊 Results and Comparisons
+## 📊 实验结果与对比分析
 
-We compare IHO with:
+对比算法包括：
 
-* HO (baseline)
+* HO（原始河马优化）
 * SBOA
 * ARO
 * INFO
 * PSO
 * GWO
 
-### Key Findings:
+### 主要结论：
 
-* **100% collision-free solutions** even with small population size ($N = 30$)
-* Superior path smoothness and compactness
-* Clear **late-stage convergence acceleration** induced by Laplacian ironing
+* 在小种群规模（$N=30$）下仍实现 **100% 无碰撞路径**
+* 路径在长度与平滑性上均优于对比方法
+* 收敛曲线后期呈现明显的**加速下降特性**
 
 <p align="center">
-  <img src="results/planned_paths/Path_Map4.png" width="48%" alt="Path">
-  <img src="results/convergence_curves/Convergence_Map4.png" width="48%" alt="Convergence">
+  <img src="results/planned_paths/Path_Map4.png" width="48%" alt="路径结果">
+  <img src="results/convergence_curves/Convergence_Map4.png" width="48%" alt="收敛曲线">
   <br>
-  <em>Map 4 comparison: IHO (blue) achieves smoother paths and exhibits cliff-like convergence behavior.</em>
+  <em>Map 4 对比：IHO（蓝色）生成更平滑路径，并表现出断崖式收敛趋势</em>
 </p>
 
 ---
 
-## 📂 Project Structure
+## 📂 项目结构
 
 ```text
 Kinematic-Aware-IHO/
-├── src/                     # Core algorithms and environments
-│   ├── main.m              # Entry point
-│   ├── IHO_Planner.m      # Proposed IHO algorithm
-│   ├── HO_Planner.m       # Original HO algorithm
-│   └── ...                # Other baselines (PSO, GWO, etc.)
-├── results/               # Generated paths and convergence curves
-├── assets/                # Figures used in the paper
-└── hardware_demos/        # Real robot demonstrations
+├── src/                     # 算法与环境代码
+│   ├── main.m              # 主程序入口
+│   ├── IHO_Planner.m      # IHO核心算法
+│   ├── HO_Planner.m       # 原始HO算法
+│   └── ...                # 其他对比算法（PSO/GWO等）
+├── results/               # 路径与收敛结果
+├── assets/                # 论文图示
+└── hardware_demos/        # 实机演示视频
 ```
 
 ---
 
-## ⚙️ Requirements
+## ⚙️ 环境依赖
 
-* OS: Windows 10/11, Ubuntu 20.04+, or macOS
-* MATLAB: R2023b or later (recommended)
-* Toolboxes: **None required** (fully reproducible using base MATLAB)
+* 操作系统：Windows / Ubuntu / macOS
+* MATLAB：R2023b 或更高版本（推荐）
+* 工具箱：无需额外工具箱（仅使用基础函数）
 
 ---
 
-## 🚀 Quick Start
+## 🚀 快速开始
 
 ```bash
 git clone https://github.com/Yule-Cai/Kinematic-Aware-IHO.git
 ```
 
-Then:
+使用步骤：
 
-1. Open MATLAB
-2. Navigate to the `src/` directory
-3. Run:
+1. 打开 MATLAB
+2. 进入 `src/` 目录
+3. 运行：
 
 ```matlab
 main.m
@@ -135,11 +140,10 @@ main.m
 
 ---
 
-## 📄 License
+## 📄 开源协议
 
-This project is licensed under the **CC BY-NC-SA 4.0 License**.
+本项目基于 **CC BY-NC-SA 4.0** 协议开源。
 
 © 2026 Yule Cai
-
 
 
