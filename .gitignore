@@ -1,0 +1,19 @@
+# MATLAB 临时文件和自动保存文件
+*.asv
+*.m~
+*.mat~
+slprj/
+*.slxc
+
+# 操作系统生成的垃圾文件 (极其重要，防止显得不专业)
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# 过滤掉过大的视频原文件 (假设你只传压缩后的 mp4)
+*.mov
+*.avi
