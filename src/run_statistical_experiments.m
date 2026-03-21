@@ -9,7 +9,7 @@ diary(log_filename); diary on;
 
 %% 1. 核心实验参数配置
 num_runs = 20;           % 独立运行次数
-max_iter = 100;          % 最大迭代次数
+max_iter = 200;          % 最大迭代次数
 algorithms = {'Ours', 'HO', 'SBOA', 'PSO', 'GWO', 'ARO', 'INFO'}; 
 num_algs = length(algorithms);
 num_maps = 5;            % 5张地图
